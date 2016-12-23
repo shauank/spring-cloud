@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: eureka-service-2
+  cloud:
+    config:
+     # profile: production
+     # label: master # optional
+      uri: http://localhost:8888 # optional
