@@ -58,7 +58,7 @@ class TestController {
 	    String greeting = this.restTempalte.getForObject("http://reservation/reservations", String.class);
 
 
-		return "hello";
+		return greeting;
 	}
 	
 	
