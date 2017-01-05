@@ -8,11 +8,28 @@ eureka:
       peer1: http://localhost:8761/eureka/
       peer2: http://localhost:8762/eureka/
       defaultZone: http://localhost:8762/eureka/
+      
+---
+
 spring:
   application:
     name: reservation
+#  profiles:
+#    active: default
   cloud:
     config:
-      profile: production
-      label: master # optional
-      uri: http://localhost:8888 # optional
+      uri: http://localhost:8888
+      username: user
+      password: 6d1e0528-4495-4cc1-853c-9370b3672761
+---
+
+spring.profiles: dev
+spring.profiles.include:
+  - devemail
+
+---
+
+
+spring.profiles: production
+spring.profiles.include:
+  - prodemail

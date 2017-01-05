@@ -12,4 +12,3 @@ public class DemoClientApplication {
 		SpringApplication.run(DemoClientApplication.class, args);
 	}
 }
-

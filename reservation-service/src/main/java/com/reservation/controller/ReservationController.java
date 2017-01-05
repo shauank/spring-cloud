@@ -13,14 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/reservations")
-@RefreshScope
-
 public class ReservationController {
 
-	@Value("${dbpassword}")
+	@Value("${emailId}")
 	private String message;
 
 	@RequestMapping(method = RequestMethod.GET)
+	@RefreshScope
 	public List<Reservation> getAllReservations() {
 		List<Reservation> reservations = new ArrayList<>();
 		Arrays.asList("Dev", "Ria", "John").forEach(name -> reservations.add(new Reservation(name + this.message)));
