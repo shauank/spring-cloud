@@ -1,2 +1,0 @@
-Implementation-Title: MyApp
-Implementation-Version: 1.0
