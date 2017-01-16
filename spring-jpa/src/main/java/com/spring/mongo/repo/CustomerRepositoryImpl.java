@@ -10,10 +10,10 @@ import com.spring.entity.mongo.Customer;
 
 @Repository
 public class CustomerRepositoryImpl implements CustomCustomerRepository {
-	
+
 	@Autowired
 	private MongoTemplate mongoTemplate;
-	
+
 	@Override
 	public List<Customer> getAllCustomers() {
 		return mongoTemplate.findAll(Customer.class);

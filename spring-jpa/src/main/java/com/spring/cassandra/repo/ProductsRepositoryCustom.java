@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.spring.entity.cassandra.Products;
 
-public interface CustomProductRepository {
-	
-//	public List<Product> getAllProducts();
-
+public interface ProductsRepositoryCustom {
+	public List<Products> selectAll();
 }

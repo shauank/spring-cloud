@@ -1,25 +1,18 @@
 package com.spring;
 
-import static org.springframework.data.mongodb.core.query.Criteria.where;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.cassandra.config.java.AbstractCassandraConfiguration;
-import org.springframework.data.cassandra.core.CassandraTemplate;
-import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
-import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -36,7 +29,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.mongodb.WriteResult;
-import com.spring.cassandra.repo.ProductRepository;
+import com.spring.cassandra.repo.ProductsRepository;
 import com.spring.entity.cassandra.Products;
 import com.spring.entity.mongo.Customer;
 import com.spring.mongo.repo.CustomerRepository;
@@ -88,10 +81,10 @@ class MongoController {
 class ProductController {
 
 	@Autowired
-	private ProductRepository productRepository;
+	private ProductsRepository productRepository;
 
-	@Autowired
-	private CassandraTemplate cassandraTemplate;
+	/*@Autowired
+	private CassandraTemplate cassandraTemplate;*/
 
 	@RequestMapping(value = "/create", method = RequestMethod.POST)
 	public Products createCustomer(@RequestBody Products product) {
@@ -100,7 +93,7 @@ class ProductController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public List<Products> getAllProducts() {
-		return cassandraTemplate.selectAll(Products.class);
+		return this.productRepository.selectAll();
 	}
 
 }
