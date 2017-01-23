@@ -13,7 +13,7 @@ import org.springframework.data.cassandra.repository.query.CassandraEntityInform
 import org.springframework.data.repository.support.Repositories;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.spring.entity.cassandra.Products;
+import com.spring.cassandra.entity.Products;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

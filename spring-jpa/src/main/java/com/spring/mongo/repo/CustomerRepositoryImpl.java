@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.spring.entity.mongo.Customer;
+import com.spring.mongo.entity.Customer;
 
 @Repository
 public class CustomerRepositoryImpl implements CustomCustomerRepository {

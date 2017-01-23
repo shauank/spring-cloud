@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraTemplate;
 
-import com.spring.entity.cassandra.Products;
+import com.spring.cassandra.entity.Products;
 
 public class ProductsRepositoryImpl implements ProductsRepositoryCustom{
 

@@ -1,4 +1,4 @@
-package com.spring.entity.cassandra;
+package com.spring.cassandra.entity;
 
 import java.math.BigInteger;
 
